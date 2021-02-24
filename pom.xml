@@ -3,13 +3,42 @@
   <groupId>com.jigar</groupId>
   <artifactId>test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+      <!-- This property will be set by the Maven Dependency plugin -->
+      <annotatedJdk>${org.checkerframework:jdk8:jar}</annotatedJdk>
+  </properties>
+  
+  
   <dependencies>
-  	<!-- https://mvnrepository.com/artifact/junit/junit -->
-   <dependency>
+  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.3.0</version>
+    <scope>test</scope>
+</dependency>
+  
+  
+  <!-- https://mvnrepository.com/artifact/junit/junit -->
+<dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>4.13.2</version>
     <scope>test</scope>
-    </dependency>
+</dependency>
+  
   </dependencies>
-</project>
+  
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.5.1</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
